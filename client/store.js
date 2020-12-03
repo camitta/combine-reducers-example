@@ -8,16 +8,17 @@ const GOT_PUPPIES = 'GOT_PUPPIES';
 const initialState = {
   puppies: []
 }
-
+// action creator
 export const gotPuppies = (puppies) => {
+  // action
   return {
     type: GOT_PUPPIES,
     puppies
   }
 }
-
+// thunk creator
 export const getPuppies = () => {
-  // change into a thunk!!!
+  // thunk
   return async (dispatch, getState, extraArguments) => {
     const {data} = await axios.get('/puppies');
     dispatch(gotPuppies(data));
