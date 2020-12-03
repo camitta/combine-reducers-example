@@ -1,19 +1,19 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {getPuppies} from './reducers/puppyReducer'
+import {getKittens} from './reducers/kittenReducer'
 
-class Puppies extends React.Component {
+class Kittens extends React.Component {
   componentDidMount() {
-    this.props.getPuppies()
+    this.props.getKittens()
   }
 
   render() {
-    const {puppies} = this.props
+    const {kittens} = this.props
     return <div>
       <div>
-        <h2> PUPPIES </h2> 
+        <h2> Kittens </h2> 
       </div>
-      {puppies.map(
+      {kittens.map(
             (pup) => {
               return <div key={pup.id}>
                 <div className='column'>
@@ -39,14 +39,14 @@ class Puppies extends React.Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    puppies: state.puppyState.puppies
+    kittens: state.kittenState.kittens
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getPuppies: () => dispatch(getPuppies())
+    getKittens: () => dispatch(getKittens())
   }
 }
 
-export const ConnectedPuppies = connect(mapStateToProps, mapDispatchToProps) (Puppies)
+export const ConnectedKittens = connect(mapStateToProps, mapDispatchToProps) (Kittens)
