@@ -16,6 +16,14 @@ app.get('/puppies', (req, res) => {
   ])
 })
 
+app.get('/kittens', (req, res) => {
+  res.json([
+    {id: 1, name: 'Cody', imageSrc:'/cat-1.jpg', favoriteFood: 'Tuna fish', favoriteToy: '/peek-a-prize.jpg'},
+    {id: 2, name: 'Fira', imageSrc:'/cat-2.jpg', favoriteFood: 'Meow Mix', favoriteToy: '/cat-teaser.jpg'},
+    {id: 3, name: 'Earl', imageSrc:'/cat-3.jpg', favoriteFood: 'Chicken', favoriteToy: '/mouse.jpg'}
+  ])
+})
+
 app.listen(3000, () => {
   console.log('started on 3000');
 })
