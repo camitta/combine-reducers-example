@@ -14,18 +14,18 @@ class Kittens extends React.Component {
         <h2> Kittens </h2> 
       </div>
       {kittens.map(
-            (pup) => {
-              return <div key={pup.id}>
+            (kitten) => {
+              return <div key={kitten.id}>
                 <div className='column'>
                   <div className='center'>
-                    <h1>{pup.name}</h1>
-                    <img src={pup.imageSrc}></img>
+                    <h1>{kitten.name}</h1>
+                    <img src={kitten.imageSrc}></img>
                   </div>
                   <div className='center'>
-                    My favorite food is: {pup.favoriteFood}
+                    My favorite food is: {kitten.favoriteFood}
                   </div>
                   <div className='center'>
-                    My favorite toy is: <img src={pup.favoriteToy}></img>
+                    My favorite toy is: <img src={kitten.favoriteToy}></img>
                   </div>
                   </div>
                 </div>
